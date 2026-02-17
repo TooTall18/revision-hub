@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Revision Hub</title>
+        
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+
+    <body>
+
+        <main class="container">
+            
+            <header class="header">
+                <h1>Revision Hub</h1>
+                <p class="sub">Flashcards + quick quizzes for Gazetter, Company Directory & General Knowledge</p>
+            </header>
+
+            <section class="card">
+
+                <div class="row">
+
+                    <label for="tagFilter">Filter:</label>
+                    <select id="tagFilter">
+                        <option value="ALL">All</option>
+                        <option value="GAZETTEER">Gazetteer</option>
+                        <option value="DIRECTORY">Company Directory</option>
+                        <option value="SECURITY">Security</option>
+                        <option value="GENERAL">General</option>
+                    </select>
+
+                    <label for="modeSelect">Mode:</label>
+                    <select id="modeSelect">
+                        <option value="FLASH_THEN_MCQ">Flashcard → Follow-up MCQ</option>
+                        <option value="FLASH_ONLY">Flashcards only</option>
+                        <option value="MCQ_ONLY">MCQs only</option>
+                    </select>
+
+                    <button id="shuffleBtn" type="button">Shuffle</button>
+                    <button id="resetBtn" type="button">Reset Score</button>
+
+                </div>
+
+                <hr>
+
+                <!--Flashcard panel-->
+                <section id="flashPanel" class="panel">
+
+                    <div class="pill">FLASHCARD</div>
+                    <h2 id="flashQuestion" class="question">Press "Next" to start</h2>
+
+                    <button id="revealBtn" type="button" class="reveal">Reveal Answer</button>
+
+                    <p id="flashAnswer" class="answer hidden"></p>
+
+                    <div class="actions">
+                        <button id="wrongBtn" type="button" class="wrong" disabled>Wrong</button>
+                        <button id="rightBtn" type="button" class="right" disabled>Right</button>
+                    </div>
+
+                    <p class="hint">
+                        Tip: Say your answer aloud before revealing.
+                    </p>
+
+                </section>
+
+                <!--MCQ panel-->
+                <section id="mcqPanel" class="panel hidden">
+
+                    <div class="pill">MULTIPLE CHOICE</div>
+                    <h2 id="mcqQuestion" class="question"></h2>
+
+                    <div id="mcqOptions" class="options"></div>
+
+                    <p id="mcqFeedback" class="feedback hidden"></p>
+
+                    <div class="actions">
+                        <button id="mcqNextBtn" type="button" disabled>Continue</button>
+                    </div>
+
+                </section>
+
+                <div class="stats">
+
+                    <button id="nextBtn" type="button">Next</button>
+
+                    <div class="stats">
+                        <span>Card: <strong id="itemIndex">0</strong>/<strong id="itemTotal">0</strong></span>
+                        <span>✅ <strong id="scoreRight">0</strong></span>
+                        <span>❌ <strong id="scoreWrong">0</strong></span>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="cheat">
+                <h3>Cheat Sheet</h3>
+                <ul>
+                    <li><strong>Gazetteer</strong>: interactive map app using APIs; PHP proxy hides keys; JS updates UI; Leaflet for maps</li>
+                    <li><strong>Company Directory</strong>: CRUD app; MySQL database; PHP backend; AJAX updates without refresh</li>
+                    <li><strong>Security</strong>: validate inputs, hide secrets, avoid SQL injection, use HTTPS</li>
+                </ul>
+            </section>
+
+        </main>
+
+        <script src="app.js"></script>
+
+    </body>
+
+</html>
